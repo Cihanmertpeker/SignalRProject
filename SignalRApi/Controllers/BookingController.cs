@@ -16,30 +16,27 @@ namespace SignalRApi.Controllers
         {
             _bookingService = bookingService;
         }
-
         [HttpGet]
         public IActionResult BookingList()
         {
             var values = _bookingService.TGetListAll();
             return Ok(values);
         }
-
         [HttpPost]
         public IActionResult CreateBooking(CreateBookingDto createBookingDto)
         {
-            Booking booking = new()
+            Booking booking = new Booking()
             {
                 Mail = createBookingDto.Mail,
                 Date = createBookingDto.Date,
                 Name = createBookingDto.Name,
                 PersonCount = createBookingDto.PersonCount,
                 Phone = createBookingDto.Phone,
-                Description = createBookingDto.Description,
+                Description = createBookingDto.Description
             };
             _bookingService.TAdd(booking);
             return Ok("Rezervasyon Yapıldı");
         }
-
         [HttpDelete("{id}")]
         public IActionResult DeleteBooking(int id)
         {
@@ -47,7 +44,6 @@ namespace SignalRApi.Controllers
             _bookingService.TDelete(value);
             return Ok("Rezervasyon Silindi");
         }
-
         [HttpPut]
         public IActionResult UpdateBooking(UpdateBookingDto updateBookingDto)
         {
@@ -58,17 +54,17 @@ namespace SignalRApi.Controllers
                 Name = updateBookingDto.Name,
                 PersonCount = updateBookingDto.PersonCount,
                 Phone = updateBookingDto.Phone,
-                Date = updateBookingDto.Date
+                Date = updateBookingDto.Date,
+                Description = updateBookingDto.Description  
             };
             _bookingService.TUpdate(booking);
             return Ok("Rezervasyon Güncellendi");
         }
-
         [HttpGet("{id}")]
         public IActionResult GetBooking(int id)
         {
             var value = _bookingService.TGetByID(id);
-            return Ok("Rezervasyon Açıklaması Değiştirildi");
+            return Ok(value);
         }
 
 

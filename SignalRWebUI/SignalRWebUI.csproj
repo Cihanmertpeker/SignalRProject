@@ -19,4 +19,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SignalR.DtoLayer\SignalR.DtoLayer.csproj" />
+    <ProjectReference Include="..\SignalR.EntityLayer\SignalR.EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>

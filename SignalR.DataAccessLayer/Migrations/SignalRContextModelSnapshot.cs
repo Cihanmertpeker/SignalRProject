@@ -51,6 +51,101 @@ namespace SignalR.DataAccessLayer.Migrations
                     b.ToTable("Contacts");
                 });
 
+            modelBuilder.Entity("SignalR.EntityLayer.Entities.MenuTable", b =>
+                {
+                    b.Property<int>("MenuTableID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MenuTableID"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.HasKey("MenuTableID");
+
+                    b.ToTable("MenuTables");
+                });
+
+            modelBuilder.Entity("SignalR.EntityLayer.Entities.MoneyCase", b =>
+                {
+                    b.Property<int>("MoneyCaseID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MoneyCaseID"), 1L, 1);
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("MoneyCaseID");
+
+                    b.ToTable("MoneyCases");
+                });
+
+            modelBuilder.Entity("SignalR.EntityLayer.Entities.Order", b =>
+                {
+                    b.Property<int>("OrderID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("Date");
+
+                    b.Property<string>("TableNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("OrderID");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("SignalR.EntityLayer.Entities.OrderDetail", b =>
+                {
+                    b.Property<int>("OrderDetailID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailID"), 1L, 1);
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("OrderDetailID");
+
+                    b.HasIndex("OrderID");
+
+                    b.HasIndex("ProductID");
+
+                    b.ToTable("OrderDetails");
+                });
+
             modelBuilder.Entity("SignalR.EntityLayer.Entities.SocialMedia", b =>
                 {
                     b.Property<int>("SocialMediaID")
@@ -290,6 +385,25 @@ namespace SignalR.DataAccessLayer.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("SignalR.EntityLayer.Entities.OrderDetail", b =>
+                {
+                    b.HasOne("SignalR.EntityLayer.Entities.Order", "Order")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SignalRApi.EntityLayer.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("SignalRApi.EntityLayer.Entities.Product", b =>
                 {
                     b.HasOne("SignalRApi.EntityLayer.Entities.Category", "Category")
@@ -299,6 +413,11 @@ namespace SignalR.DataAccessLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("SignalR.EntityLayer.Entities.Order", b =>
+                {
+                    b.Navigation("OrderDetails");
                 });
 
             modelBuilder.Entity("SignalRApi.EntityLayer.Entities.Category", b =>
