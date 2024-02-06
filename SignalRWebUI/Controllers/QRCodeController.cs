@@ -22,7 +22,7 @@ namespace SignalRWebUI.Controllers
 			using (MemoryStream memoryStream = new MemoryStream())
 			{
 			  QRCodeGenerator createQRCode = new QRCodeGenerator();
-				QRCodeGenerator.QRCode squareCode = createQRCode.CreateQrCode(value, QRCodeGenerator.ECCLevel.Q);
+				QRCodeGenerator.QRCode squareCode = createQRCode.CreateQrCode(value, QRCodeGenerator.ECCLevel.L);
 				using(Bitmap image = squareCode.GetGraphic(10))
 				{
 					image.Save(memoryStream,ImageFormat.Png);
