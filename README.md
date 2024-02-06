@@ -68,32 +68,25 @@ RapidAPI, farklı hizmet sağlayıcıların sunduğu API'leri tek bir yerden eri
 - Kullanıcılardan gelen mesajları görüntüleyebilir.
 - Dashboard panelinde bazı dinamik istatistik bilgilerini görebilir.
 - Menü, Rezervasyonlar, İndirimler, İletişim, İletişim Bilgileri, Kategoriler ve Referanslar gibi tüm işlemleri panel üzerinden yönetebilirler .
-
 ## İlişkisel Veri Tabanı Diagramı
+![290985868-966bf337-0476-4f97-af2f-d8c19fe2289b](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/ca89c4af-cfaa-4093-ab87-57e7c062436c)
 
-![alt text](290985868-966bf337-0476-4f97-af2f-d8c19fe2289b.png)
 
 ## UI
-
-![alt text](index.jpg)
-![alt text](index2.jpg)
-![alt text](menu.jpg)
-![alt text](basket.jpg)
-![alt text](basket2.jpg)
-![alt text](contact.jpg)
-![alt text](login.jpg) 
-![alt text](register.jpg)
+![index](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/b53e4f0d-0d09-4fe1-81d7-b66c2ab85929)
+![index2](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/87b97f22-9f20-41f4-b434-f7dc3d59b37c)
+![menu](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/6f030030-b5b5-4a26-8698-f89d1c29b66e)
+![basket](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/25fe85c4-13be-46d8-9653-cb36a9be426b)
+![basket2](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/7c013f07-dd3f-4a4f-85a8-ff35ffbfa113)
+![contact](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/3df07ee4-4595-444b-b09b-de4c8b506fdd)
+![register](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/9a6ec1d5-8472-40a0-9311-6cd37d9d0673)
+![login](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/5f0bc478-60a6-42b7-8111-9752667f1699)
 
 ## Yönetici Paneli ve API
-![api](image.png)
-![Kategori](image-1.png)
-![Ürünler](image-2.png)
-![Öne Çıkanlar](image-3.png)
-![Anlık istatistik sayfası](image-4.png)
-![QR](image-5.png)
-
-
-
-
-
+![API](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/a388f32a-c686-4077-8bdc-c4ffd2091267)
+![Kategori](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/9de2aff3-aa80-4e76-bc1d-7a46ff97c0c2)
+![Urunler](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/79f0b617-9928-41aa-ab72-ba7635a252d8)
+![One Cikanlar](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/1eefa4e8-792d-40b8-83a8-9d092d729c75)
+![Istatistikler](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/72693c14-d448-4efd-a386-cd0d4e296397)
+![image](https://github.com/Cihanmertpeker/SignalRProject/assets/119748061/bddff38c-38bc-4b41-abb9-9e20e54aa3ce)
 
